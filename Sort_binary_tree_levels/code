@@ -1,0 +1,13 @@
+def tree_by_levels(node):
+    if not node:
+        return []
+    result = []
+    queue = [node]
+    while queue:
+        cur_node = queue.pop(0)
+        result.append(cur_node.value)
+        if cur_node.left:
+            queue.append(cur_node.left)
+        if cur_node.right:
+            queue.append(cur_node.right)
+    return result
